@@ -154,3 +154,35 @@ Cet atelier ANSIBLE, **noté sur 20 points**, est évalué sur la base du barèm
 - Questions + Qualité du Readme (lisibilité, erreur, ...) (5 points)
 - Atelier - Rôles DEV et PROD (6 points)
 - Processus travail (quantité de commits, cohérence globale, interventions externes, ...) (3 points) 
+
+1
+Ansible est qualifié d’outil déclaratif car on décrit l’état final souhaité du système, et non les étapes techniques détaillées pour y parvrenir
+
+2
+Les variables permettent de rendre un playbook :
+
+réutilisable
+flexible
+facile à maintenir
+
+3
+Ansible utilise un fichier appelé inventory qui permet de regrouper les serveurs
+
+4
+Avantages
+Simple à utiliser (syntaxe YAML lisible)
+Pas besoin d’agent (connexion SSH)
+Automatisation rapide des déploiements
+Idempotence (pas d’effet secondaire si on relance)
+Réduction des erreurs humaines
+Facile à intégrer en CI/CD
+Limites
+Peut devenir complexe sur de gros projets
+Moins performant sur très grandes infrastructures
+Nécessite une bonne organisation (roles, variables, inventaire)
+Debug parfois difficile pour les débutants
+
+
+5
+Le module copy permet de copier un fichier tel quel depuis la machine de contrôle vers la machine cible.
+Le module template permet de copier un fichier dynamique en utilisant des variables avec le moteur Jinja2
