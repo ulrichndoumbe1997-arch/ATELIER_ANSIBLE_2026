@@ -9,6 +9,10 @@
     yarn_repo_file: /etc/apt/sources.list.d/yarn.list
     yarn_repo_disabled_file: /etc/apt/sources.list.d/yarn.list.disabled
 
+    page_title: "Serveur déployé avec Ansible"
+    author: "Ulrich Ndoumbe"
+    app_user: "Ulrich"
+
   tasks:
     - name: Afficher le système cible
       debug:
@@ -51,9 +55,9 @@
         group: root
         mode: "0755"
 
-    - name: Déployer la page HTML personnalisée
-      copy:
-        src: files/index.html
+    - name: Déployer la page HTML depuis un template
+      template:
+        src: templates/index.html.j2
         dest: "{{ page_dest }}"
         owner: root
         group: root
@@ -93,4 +97,3 @@
     - name: Redémarrer nginx
       service:
         name: nginx
-        state: restarted
